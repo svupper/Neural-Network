@@ -1,32 +1,30 @@
 import numpy as np
 import math as m
 
-X=np.random.randn(9,1)
-X=np.concatenate[X,1]
-Y=np.random.random_sample
-W=np.random.randn(10,1)*0.01    # +bias
+labda=0.5
+X=np.random.randn(10,2) # x1 and x2
+Y=2*np.random.randint(0,2,size=(10))-1
 
-v=np.dot(W,X)
+W=np.random.randn(2,1)*0.01    
+bias=10
 
 
-loss=lambda y,yd:(1/2)*(y-yd)
+loss=lambda y,yd:(y-yd)^2
 sig=lambda v:(m.exp(v)-m.exp(-v))/(m.exp(v)-m.exp(-v))
 sigp=lambda v:sig(v)(1-sig(v))
 
-#dx=dx*dv #dL gradient incoming, dv gradient of the gate, dx gradient outputting
-y=sig(v)
 
-act={}
 
-##
-#
-#for i in range(size(W(1,1,:))):
-#	y=v(W*X)
-#	
-#	
-#
-#for i in X:
-#	dL=1
-#	dx=dL*dv
-#    */
-##
+for i in range(len(X)):
+    #forward pass
+    v=np.dot(X(i),W)+bias
+    y=sig(v)
+    
+    #loss function
+    l=loss(y,Y(1))
+    
+    #backward pass
+    dl=sigp(v)*(1/2)*(y-Y(1))
+    W-=labda*dl*X(i)
+    bias-=labda*dl
+
