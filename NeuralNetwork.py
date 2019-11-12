@@ -1,4 +1,14 @@
+# TODO:
+#Implement multiple layer model
+#implement multiple perceptrons on layers
+
+
+
+
 import numpy as np
+
+
+
 import math as m
 import matplotlib.pyplot as plt
 
