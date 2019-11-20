@@ -2,9 +2,6 @@
 #Implement multiple layer model
 #implement multiple perceptrons on layers
 
-
-
-
 import numpy as np
 
 
