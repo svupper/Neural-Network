@@ -24,6 +24,8 @@ e=0
 
 p=f.perceptron(X,W)
 
+loss=p.forward()
+
 #for i in range(len(X)):
 #    #forward pass
 #    v=np.dot(W,X[i,:])+bias
