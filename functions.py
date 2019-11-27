@@ -52,8 +52,10 @@ class perceptron:
     
     def backwardgradient(self,dx):
         #dx=dv*dy
-        return sigp(self.v)*dx
+        self.dv=sigp(self.v)*dx
+        return self.dv
     
     def updateWeight(self):
+        self.weight=self.weight+self.dv
 
         
